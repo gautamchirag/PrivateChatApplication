@@ -1,5 +1,1 @@
-# Update
-
-After the new update of React, you won't be able to use CRA. But you can easily create your applications with Vite before following the video tutorial.
-
-[Create a React App with Vite](https://github.com/safak/youtube23/tree/react-mini)
+My project is a private chat application developed with React and powered by Firebase. Users can securely communicate in real-time, enjoying seamless messaging and authentication features for a robust and user-friendly experience.
