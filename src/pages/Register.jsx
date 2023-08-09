@@ -7,7 +7,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
-  const [err, setErr] = useState(false);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -48,13 +48,13 @@ const Register = () => {
             navigate("/");
           } catch (err) {
             console.log(err);
-            setErr(true);
+            setError(true);
             setLoading(false);
           }
         });
       });
     } catch (err) {
-      setErr(true);
+      setError(true);
       setLoading(false);
     }
   };
@@ -62,7 +62,7 @@ const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Lama Chat</span>
+        <span className="logo">Private Chat Application</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
           <input required type="text" placeholder="display name" />
@@ -75,7 +75,7 @@ const Register = () => {
           </label>
           <button disabled={loading}>Sign up</button>
           {loading && "Uploading and compressing the image please wait..."}
-          {err && <span>Something went wrong</span>}
+          {error && <span>Something went wrong</span>}
         </form>
         <p>
           You do have an account? <Link to="/register">Login</Link>
