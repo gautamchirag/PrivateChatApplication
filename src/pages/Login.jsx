@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 const Login = () => {
-  const [err, setErr] = useState(false);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -16,7 +16,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/")
     } catch (err) {
-      setErr(true);
+      setError(true);
     }
   };
   return (
@@ -28,7 +28,7 @@ const Login = () => {
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
           <button>Sign in</button>
-          {err && <span>Something went wrong</span>}
+          {error && <span>Something went wrong</span>}
         </form>
         <p>You don't have an account? <Link to="/register">Register</Link></p>
       </div>
